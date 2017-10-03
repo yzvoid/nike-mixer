@@ -1,4 +1,0 @@
-NIKE_DB:
-    dsn: "dbi:Pg:dbname=nike;host=localhost"
-    user: "nike_admin"
-    password: "n1k3_4dm1n"
