@@ -23,12 +23,10 @@ sub save: Abstract;
 sub stringify: Abstract;
 
 sub to_xml {
-	my ($self, $writer) = @_;
+	my $self = shift;
 
-	if  ($writer eq undef)  {
-		$writer = new XML::Writer(OUTPUT => 'self', DATA_MODE => 1, DATA_INDENT => 2);
-		$writer->xmlDecl('UTF-8');
-	}
+	my $writer = new XML::Writer(OUTPUT => 'self', DATA_MODE => 1, DATA_INDENT => 2);
+	$writer->xmlDecl('UTF-8');
 		
 	return $self->to_xml_writer($writer);
 }
